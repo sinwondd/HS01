@@ -1,0 +1,31 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: light dark;
+}
+
+body {
+  font-family: system-ui;
+  font-size: 1.125rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+main {
+  margin-inline: auto;
+  /* padding-inline: 2rem;
+  /* ch는 내가 고른 글자사이즈를 기준 0이 하나 들어갈 수 있는 너비 (60글자 들어갈 수 있ㅆ는 너비) */
+  /* max-width: 70ch; */
+  width: min(70ch, 100% - 2 * 32px);
+}
+
+img,
+svg,
+video,
+iframe {
+  /* 이미지와 글 사이에 간격이 생기는건 inline이기 때문이다. 그래서 블록처리 꼭 해줄필요있음 */
+  display: block;
+  max-width: 100%;
+}

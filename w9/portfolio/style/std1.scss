@@ -1,0 +1,129 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  color: blue;
+  text-decoration: none;
+}
+
+.wrapper {
+  padding-block: 30px;
+}
+
+.nav .wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 12px;
+}
+
+.nav__menuWrapper {
+  display: flex;
+  font-family: "Bruno Ace SC", cursive;
+  gap: 24px;
+  font-size: 17px;
+  color: blue;
+}
+
+.nav__logo {
+  font-size: 24px;
+  float: right;
+  font-family: "Orbitron", sans-serif;
+  color: blue;
+  font-weight: 600;
+}
+
+.topNav {
+  font-size: 17px;
+  font-family: "Bruno Ace SC", cursive;
+  text-transform: capitalize;
+}
+.container {
+  --varName: 30px;
+  max-width: calc 1200px + 2 * var(--varName);
+  margin-inline: auto;
+  padding-inline: var(--varName);
+}
+
+.button {
+  background-color: blue;
+  padding: 6px 14px;
+  border-radius: 8px;
+  color: aliceblue;
+}
+
+.button > a {
+  color: white;
+  font-family: "Bruno Ace SC", cursive;
+  font-size: 17px;
+}
+
+.dashboard {
+  margin: 30px 100px;
+  display: flex;
+  flex-direction: column;
+}
+
+.h1 {
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 700;
+  font-size: 80px;
+}
+
+.eng-comment {
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  margin-top: 20px;
+}
+
+.profile {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  margin-top: 80px;
+}
+
+.introduction > h2 {
+  font-family: "Bruno Ace SC", cursive;
+  font-size: 25px;
+  margin-bottom: 30px;
+  max-width: 600px;
+  margin-left: 50px;
+}
+.introduction > p {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 17px;
+  margin-bottom: 80px;
+  margin-left: 60px;
+  line-height: 30px;
+}
+
+.button__2 {
+  background-color: unset;
+  padding: 20px;
+  font-family: "Bruno Ace SC", cursive;
+  color: blue;
+  font-size: large;
+  font-weight: 800;
+}
+
+#hero1 .wrapper {
+  text-align: center;
+  margin-inline: auto;
+  margin-top: 40px;
+}
+
+#hero1 .wrapper h3 {
+  margin-bottom: 16px;
+  font-family: "Bruno Ace SC", cursive;
+  font-style: oblique;
+}

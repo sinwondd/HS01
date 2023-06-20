@@ -1,0 +1,156 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  color: blue;
+  text-decoration: none;
+}
+
+.wrapper {
+  padding-block: 30px;
+}
+
+.nav .wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 12px;
+}
+
+.nav__menuWrapper {
+  display: flex;
+  font-family: "Bruno Ace SC", cursive;
+  gap: 24px;
+  font-size: 17px;
+  color: blue;
+}
+
+.nav__logo {
+  font-size: 26px;
+  float: right;
+  font-family: "Orbitron", sans-serif;
+  color: blue;
+  font-weight: 600;
+}
+
+.topNav {
+  font-size: 17px;
+  font-family: "Bruno Ace SC", cursive;
+  text-transform: capitalize;
+}
+.container {
+  --varName: 30px;
+  max-width: calc 1200px + 2 * var(--varName);
+  margin-inline: auto;
+  padding-inline: var(--varName);
+}
+
+.button {
+  background-color: blue;
+  padding: 6px 14px;
+  border-radius: 8px;
+  color: aliceblue;
+}
+
+.button > a {
+  color: white;
+  font-family: "Bruno Ace SC", cursive;
+  font-size: 17px;
+}
+
+.dashboard {
+  margin: 30px 100px;
+  display: flex;
+  flex-direction: column;
+}
+
+.h1 {
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 700;
+  font-size: 80px;
+}
+
+.eng-comment {
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  margin-top: 20px;
+}
+
+.profile {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border-radius: 40px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  margin-top: 80px;
+  overflow: hidden;
+}
+
+.introduction > h2 {
+  font-family: "Bruno Ace SC", cursive;
+  font-size: 22px;
+  margin-bottom: 30px;
+  max-width: 600px;
+  margin-left: 50px;
+}
+.introduction > p {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 17px;
+  margin-bottom: 80px;
+  margin-left: 60px;
+  margin-right: 60px;
+  line-height: 30px;
+}
+
+.button__2 {
+  background-color: unset;
+  padding: 20px;
+  font-family: "Bruno Ace SC", cursive;
+  color: blue;
+  font-size: large;
+  font-weight: 800;
+}
+
+#hero1 .wrapper {
+  text-align: center;
+  margin-inline: auto;
+  margin-top: 40px;
+}
+
+#hero1 .wrapper h3 {
+  margin-bottom: 16px;
+  font-family: "Bruno Ace SC", cursive;
+  font-style: oblique;
+}
+
+#wrap {
+  min-height: 15cm;
+  margin-top: 3cm;
+  border-top: 2cm;
+  position: relative;
+  width: 100%;
+  background-color: aliceblue;
+}
+.footer {
+  width: 100%;
+  height: 100px;
+  bottom: 0px;
+  position: absolute;
+}
+.footer a {
+  display: inline-block;
+  margin: 0 50px 20px 50px;
+  color: #808080;
+  font-size: 20px;
+}
+
+.footer p span {
+  display: inline-block;
+  margin-left: 20px;
+}

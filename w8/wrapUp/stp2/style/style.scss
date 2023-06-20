@@ -1,0 +1,121 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Spoqa Han Sans Neo", "sans-serif";
+}
+
+img {
+  display: block;
+}
+
+.container {
+  margin-inline: auto;
+  padding-inline: 2rem;
+  max-width: 960px;
+}
+
+@media (width < 37.5rem) {
+  .container {
+    padding-inline: 1rem;
+  }
+}
+.wrapper {
+  padding-block: 2rem;
+  min-height: 100dvh;
+}
+
+#section1 .wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+#card2 {
+  // position: static; 가장 기본으로 설정되어있음
+  // position: absolute; 상단 바디쪽까지 올라가서 자신 바로 위 부모요소 중에서 relative 값이 있는 애를 기준삼아 위치선정
+  // position: relative; 는 자기 자리를 차지하는 방식에서 상하좌우로 움직이며 작동
+  // position: sticky는(top:5px) wrapper안에서는 계속 스크롤링 되다가 밖으로가면 멈춤
+  // position: fixed;의 경우 창을 기준으로 상단에 고정시켜버려서 창 스크롤을 내려도 고정되어있음
+  position: relative;
+}
+
+.card {
+  max-width: 18.75rem;
+}
+.card__roundedBorder {
+  border: 0.0625rem solid #ccc;
+  border-radius: 0.5rem;
+  background-color: white;
+  overflow: hidden;
+}
+.card__img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+.card__text {
+  padding: 1rem;
+}
+.card__text h3 {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+.card__text p {
+  line-height: 1.5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -moz-box;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -moz-line-clamp: 4;
+  -webkit-line-clamp: 4;
+  max-height: 6rem;
+}
+.card__buttons {
+  padding: 1rem;
+  display: flex;
+  justify-content: end;
+  gap: 0.5rem;
+}
+
+.button {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  line-height: 0.875rem;
+  font-weight: bold;
+  background-color: blue;
+  color: rgba(255, 255, 255, 0.87);
+  border-radius: 62.4375rem;
+}
+.button--type-text {
+  background-color: unset;
+  color: blue;
+  padding-inline: 0.5rem;
+}
+
+.badge {
+  // 포지션 앱솔뤁은 뱃지 아이콘이 다른 영역 차지,지정없이 사진 안에 들어가도록 함
+  position: absolute;
+  right: -0.5rem;
+  top: -0.5rem;
+  aspect-ratio: 1/1;
+  // 원 모양이 찌그러지는 현상방지를 위해 min-width 넣어줌
+  min-width: 1.25rem;
+  width: -moz-fit-content;
+  // fitcontent가 들어가야 딱 숫자만큼의 크기로만 원이 적용댐
+  width: fit-content;
+  padding: 0.25rem;
+  font-size: 0.6875rem;
+  line-height: 0.75rem;
+  font-weight: bold;
+  background-color: red;
+  color: rgba(255, 255, 255, 0.87);
+  border-radius: 62.4375rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
