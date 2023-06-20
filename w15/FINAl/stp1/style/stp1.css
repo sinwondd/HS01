@@ -19,12 +19,6 @@ a {
   align-items: center;
 }
 
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
 li {
   display: inline-block;
   margin: 0 10px;
@@ -111,14 +105,17 @@ section {
   }
 }
 
-.h1 {
+.textanim {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Noto Sans KR", sans-serif;
+  font-family: Verdana, Tahoma, sans-serif;
   font-weight: 700;
-  font-size: 80px;
-  margin-top: 1.25rem;
+  font-size: 1.25rem;
+  margin-top: 0.9375rem;
+  margin-bottom: 1.25rem;
+  width: fit-content;
+  margin-left: 3.125rem;
 }
 
 p {
@@ -126,15 +123,7 @@ p {
   justify-content: center;
   margin-top: 0.75rem;
   margin-bottom: 1.25rem;
-  padding: 0 1rem; /* 수정된 부분: 패딩을 추가 */
-}
-
-script {
-  font-family: "Franklin Gothic Medium",
-    "Arial Narrow", Arial, sans-serif;
-  font-size: 6.25rem;
-  color: chartreuse;
-  text-shadow: 0 0 0.3125rem black;
+  padding: 12.5rem;
 }
 
 @media (max-width: 53.125rem) {
@@ -154,23 +143,25 @@ script {
   background-color: #000;
   padding-block: 4rem;
   color: white;
+  padding-left: 18.75rem;
+  padding-right: 12.5rem;
 }
 
-.prof {
-  max-width: 1328px;
-  margin-inline: auto;
-  padding-inline: 64px;
-}
-.prof .wrapper {
-  /* background-color: blue; */
-  padding-block: 64px;
+.ima-title {
+  margin-bottom: 1.25rem;
+  display: flex;
+  justify-content: center;
+  padding: 1.875rem;
+  /* align-items: center;
+  display: ; */
 }
 .h2 {
-  margin-bottom: 0.9375rem;
+  margin-bottom: 1.25rem;
+  align-items: center;
 }
 
-.image-box {
-  width: 100%;
+.box-text {
+  width: 70%;
   border-radius: 5px;
   padding-block: 4rem;
   display: grid;
@@ -181,9 +172,13 @@ script {
   gap: 0.1875rem;
 }
 
-.prof .image-box:hover .image-box {
+.card__img {
+  display: flex;
+  justify-content: center;
+}
+.card__img:hover {
   transform: scale(1.1);
-  transform: 0.8s;
+  transform: 1s;
 }
 
 .card-description {
@@ -191,14 +186,18 @@ script {
 }
 
 .card-button {
-  background-color: #4caf50;
+  margin-left: 1.875rem;
+  width: fit-content;
+  height: fit-content;
+  background-color: red;
   color: white;
   border: none;
   padding: 10px 20px;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
+  display: flex;
   font-size: 16px;
+
   cursor: pointer;
   border-radius: 4px;
 }
