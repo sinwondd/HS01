@@ -11,21 +11,15 @@ a {
 
 nav {
   background-color: black;
-  padding: 1.25rem;
+  padding: 1.875rem;
+  font-size: 1.25rem;
+}
+.logo {
   display: flex;
   justify-content: space-between;
+  font-family: serif;
+  font-style: italic;
   align-items: center;
-}
-
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
 }
 
 a {
@@ -54,6 +48,21 @@ section {
   overflow: hidden;
   text-align: center;
 }
+p {
+  font-size: 16px;
+}
+
+@media (max-width: 600px) {
+  p {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 601px) {
+  p {
+    font-size: 18px;
+  }
+}
 
 .wrapper {
   background: linear-gradient(
@@ -65,18 +74,18 @@ section {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  margin-inline: auto;
+  font-family: serif;
   display: flex;
   flex-direction: column;
-  // padding-left: 6.25rem;
-  // padding-right: 6.25rem;
+  padding-inline: 3.125rem;
   letter-spacing: 2px;
+  padding-top: 3.75rem;
+}
 
-  .button--type-text {
-    background-color: unset;
-    color: red;
-    padding-inline: 0;
-  }
+.button--type-text {
+  background-color: unset;
+  color: red;
+  padding-inline: 0;
 }
 
 #tired1 {
@@ -100,22 +109,46 @@ section {
 }
 
 #tired2 {
-  .textanim h2 {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fade-in 1s ease forwards;
+  .animTarget {
+    transform: scale(0);
+    transition: transform 500ms ease-in-out;
   }
-
-  .textanim p {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fade-in 1s ease 0.5s forwards;
+  &.triggered {
+    .animTarget {
+      transform: scale(1);
+    }
   }
+}
 
-  @keyframes fade-in {
-    to {
-      opacity: 1;
-      transform: translateY(0);
+#tired3 {
+  .animTarget {
+    transform: translateX(100vw);
+  }
+  .animTarget:nth-child(1) {
+    transition: transform 500ms ease-in-out;
+  }
+  .animTarget:nth-child(2) {
+    transition: transform 450ms ease-in-out 50ms;
+  }
+  &.triggered {
+    .animTarget {
+      transform: translateX(0);
+    }
+  }
+}
+#tired4 {
+  .animTarget {
+    transform: translateX(100vw);
+  }
+  .animTarget:nth-child(1) {
+    transition: transform 500ms ease-in-out;
+  }
+  .animTarget:nth-child(2) {
+    transition: transform 450ms ease-in-out 50ms;
+  }
+  &.triggered {
+    .animTarget {
+      transform: translateX(0);
     }
   }
 }
@@ -138,13 +171,13 @@ p {
   padding: 0 1rem; /* 수정된 부분: 패딩을 추가 */
 }
 
-script {
-  font-family: "Franklin Gothic Medium",
-    "Arial Narrow", Arial, sans-serif;
-  font-size: 6.25rem;
-  color: chartreuse;
-  text-shadow: 0 0 0.3125rem black;
-}
+// script {
+//   font-family: "Franklin Gothic Medium",
+//     "Arial Narrow", Arial, sans-serif;
+//   font-size: 6.25rem;
+//   color: chartreuse;
+//   text-shadow: 0 0 0.3125rem black;
+// }
 
 @media (max-width: 53.125rem) {
   .wrapper {
@@ -161,56 +194,91 @@ script {
 }
 
 .profile {
+  background-color: #000;
   padding-block: 4rem;
-}
-.prof {
-  $padding-inline-value: 64px;
-  max-width: 1200px + 2 * $padding-inline-value;
-  margin-inline: auto;
-  padding-inline: $padding-inline-value;
-  .wrapper {
-    /* background-color: blue; */
-    padding-block: 64px;
-  }
+  color: white;
+  float: center;
 }
 
-.image-box {
-  width: 100%;
-  border-radius: 5px;
-  padding-block: 4rem;
+.ima-title {
+  margin-bottom: 1.25rem;
+  display: flex;
+  justify-content: center;
+  padding: 1.875rem;
+  font-size: 1.875rem;
+  /* align-items: center;
+  display: ; */
+}
+.card-title {
+  margin-bottom: 1.5rem;
+  align-items: center;
+  color: brown;
+}
+
+.box-text {
+  width: 75%;
+  padding-block: 3.125rem;
   display: grid;
+  margin-left: 12vw;
   grid-template-columns: repeat(
     auto-fit,
     minmax(15.4375rem, 1fr)
   );
   gap: 0.1875rem;
 }
-.box-text {
+.span {
+  display: flex;
+  justify-content: center;
 }
-.prof .image-box:hover .image-box {
+
+.card__img:hover {
   transform: scale(1.1);
-  transform: 0.8s;
+  transform: 1s;
 }
 
 .card-description {
   margin-bottom: 20px;
+  color: mistyrose;
+  font-family: "Diphylleia", serif;
+}
+@keyframes button-animation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 .card-button {
-  background-color: #4caf50;
+  margin-left: 1.875rem;
+  width: fit-content;
+  height: fit-content;
+  background-color: red;
   color: white;
   border: none;
   padding: 10px 20px;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
+  display: flex;
   font-size: 16px;
   cursor: pointer;
   border-radius: 4px;
+  animation-name: button-animation;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 15;
+}
+.card-button:active {
+  background-color: blue;
+  color: #ffffff; /* 텍스트 색상 변경 */
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.4); /* 그림자 효과 추가 */
 }
 
-.footer {
-  .wrapper {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
+.column {
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-top: 3.125rem;
 }

@@ -9,19 +9,19 @@ a {
   color: white;
   text-decoration: none;
 }
-
-nav {
-  background-color: black;
-  padding: 1.875rem;
-  font-size: 1.25rem;
-}
-
 .logo {
+  background-color: black;
+  padding: 1.25rem;
   display: flex;
   justify-content: space-between;
-  font-family: serif;
-  font-style: italic;
+  font-family: Georgia, "Times New Roman", Times,
+    serif;
   align-items: center;
+}
+
+li {
+  display: inline-block;
+  margin: 0 10px;
 }
 
 a {
@@ -51,35 +51,22 @@ section {
   text-align: center;
 }
 
-p {
-  font-size: 16px;
-}
-
-@media (max-width: 600px) {
-  p {
-    font-size: 14px;
-  }
-}
-@media (min-width: 601px) {
-  p {
-    font-size: 18px;
-  }
-}
 .wrapper {
-  background: linear-gradient(#420602, #000, #e61302);
+  background: linear-gradient(
+    #420602,
+    #000,
+    #e61302
+  );
   color: seashell;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  font-family: serif;
+  margin-inline: auto;
   display: flex;
   flex-direction: column;
-  padding-inline: 3.125rem;
   letter-spacing: 2px;
-  padding-top: 3.75rem;
 }
-
-.button--type-text {
+.wrapper .button--type-text {
   background-color: unset;
   color: red;
   padding-inline: 0;
@@ -87,7 +74,8 @@ p {
 
 #tired1 .animTarget {
   opacity: 0;
-  transition: transform 750ms ease-out, opacity 1000ms;
+  transition: transform 750ms ease-out,
+    opacity 1000ms;
 }
 #tired1 .animTarget:nth-child(1) {
   transform: translateY(-50px);
@@ -100,48 +88,34 @@ p {
   transform: translateY(0);
 }
 
-#tired2 .animTarget {
-  transform: scale(0);
-  transition: transform 500ms ease-in-out;
+#tired2 .textanim h2 {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fade-in 1s ease forwards;
 }
-#tired2.triggered .animTarget {
-  transform: scale(1);
+#tired2 .textanim p {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fade-in 1s ease 0.5s forwards;
 }
-
-#tired3 .animTarget {
-  transform: translateX(100vw);
-}
-#tired3 .animTarget:nth-child(1) {
-  transition: transform 500ms ease-in-out;
-}
-#tired3 .animTarget:nth-child(2) {
-  transition: transform 450ms ease-in-out 50ms;
-}
-#tired3.triggered .animTarget {
-  transform: translateX(0);
+@keyframes fade-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-#tired4 .animTarget {
-  transform: translateX(100vw);
-}
-#tired4 .animTarget:nth-child(1) {
-  transition: transform 500ms ease-in-out;
-}
-#tired4 .animTarget:nth-child(2) {
-  transition: transform 450ms ease-in-out 50ms;
-}
-#tired4.triggered .animTarget {
-  transform: translateX(0);
-}
-
-.h1 {
+.textanim {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Noto Sans KR", sans-serif;
+  font-family: Verdana, Tahoma, sans-serif;
   font-weight: 700;
-  font-size: 80px;
-  margin-top: 1.25rem;
+  font-size: 1.25rem;
+  margin-top: 0.9375rem;
+  margin-bottom: 1.25rem;
+  width: fit-content;
+  margin-left: 3.125rem;
 }
 
 p {
@@ -149,7 +123,7 @@ p {
   justify-content: center;
   margin-top: 0.75rem;
   margin-bottom: 1.25rem;
-  padding: 0 1rem; /* 수정된 부분: 패딩을 추가 */
+  padding: 12.5rem;
 }
 
 @media (max-width: 53.125rem) {
@@ -169,7 +143,8 @@ p {
   background-color: #000;
   padding-block: 4rem;
   color: white;
-  float: center;
+  padding-left: 18.75rem;
+  padding-right: 12.5rem;
 }
 
 .ima-title {
@@ -177,31 +152,30 @@ p {
   display: flex;
   justify-content: center;
   padding: 1.875rem;
-  font-size: 1.875rem;
   /* align-items: center;
   display: ; */
 }
-
-.card-title {
-  margin-bottom: 1.5rem;
+.h2 {
+  margin-bottom: 1.25rem;
   align-items: center;
-  color: brown;
 }
 
 .box-text {
-  width: 75%;
-  padding-block: 3.125rem;
+  width: 70%;
+  border-radius: 5px;
+  padding-block: 4rem;
   display: grid;
-  margin-left: 12vw;
-  grid-template-columns: repeat(auto-fit, minmax(15.4375rem, 1fr));
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(15.4375rem, 1fr)
+  );
   gap: 0.1875rem;
 }
 
-.span {
+.card__img {
   display: flex;
   justify-content: center;
 }
-
 .card__img:hover {
   transform: scale(1.1);
   transform: 1s;
@@ -209,26 +183,11 @@ p {
 
 .card-description {
   margin-bottom: 20px;
-  color: mistyrose;
-  font-family: "Diphylleia", serif;
 }
 
-@keyframes button-animation {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.1);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
 .card-button {
   margin-left: 1.875rem;
-  width: -moz-fit-content;
   width: fit-content;
-  height: -moz-fit-content;
   height: fit-content;
   background-color: red;
   color: white;
@@ -238,21 +197,11 @@ p {
   text-decoration: none;
   display: flex;
   font-size: 16px;
+
   cursor: pointer;
   border-radius: 4px;
-  animation-name: button-animation;
-  animation-duration: 1s;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: 15;
 }
 
-.card-button:active {
-  background-color: blue;
-  color: #ffffff; /* 텍스트 색상 변경 */
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.4); /* 그림자 효과 추가 */
-}
-
-.column {
+.footer .wrapper {
   grid-template-columns: 1fr 1fr 1fr;
-  margin-top: 3.125rem;
 }
