@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -45,10 +46,13 @@ a:hover {
 
 main {
   width: 100%;
-  height: 100dvh;
+  height: 100vh;
   overflow-x: hidden;
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
+  font-family: system-ui;
+  font-size: 1.25rem;
+  line-height: 1.5;
 }
 
 section {
@@ -65,12 +69,14 @@ section:nth-child(even) {
   background: linear-gradient(#420602, #000, #e61302);
   color: whitesmoke;
   width: 100vw;
-  height: 100dvh;
+  height: 100vh;
   overflow: hidden;
   margin-inline: auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  padding-left: 50px;
+  padding-right: 50px;
+  letter-spacing: 2px;
 }
 .wrapper .button--type-text {
   background-color: unset;
@@ -93,12 +99,39 @@ section:nth-child(even) {
   transform: translateY(0);
 }
 
-#tired2 .animTarget {
-  transform: scale(0);
-  transition: transform 6000ms ease-out;
+#tired2 .textanim h2 {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fade-in 1s ease forwards;
 }
-#tired2.triggered .animTarget {
-  transform: scale(1);
+#tired2 .textanim p {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fade-in 1s ease 0.5s forwards;
+}
+@keyframes fade-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 700;
+  font-size: 80px;
+  margin-top: 1.25rem;
+}
+
+p {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.75rem;
+  margin-bottom: 1.25rem;
+  padding: 0 1rem; /* 수정된 부분: 패딩을 추가 */
 }
 
 script {
@@ -108,13 +141,10 @@ script {
   text-shadow: 0 0 0.3125rem black;
 }
 
-@media (width < 53.125rem) {
+@media (max-width: 53.125rem) {
   .wrapper {
     display: block;
     text-align: center;
-  }
-  .wrapper p {
-    margin-inline: auto;
   }
   .main__text {
     margin-bottom: 2.25rem;
@@ -122,51 +152,8 @@ script {
   .main__text__buttonWrapper {
     margin-inline: auto;
     flex-direction: column;
-    align-items: center;
-    gap: 0;
   }
-}
-.footer {
-  background-color: black;
-  color: white;
-  font-size: 0.875rem;
-  margin-top: 1.25rem;
-  container-type: inline-size;
-  container-name: footer;
-}
-.footer li {
-  list-style: none;
-}
-.footer svg {
-  fill: white;
 }
 .footer .wrapper {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  gap: 2rem;
-}
-.footer h2 {
-  font-size: 0.9375rem;
-  margin-top: 0.25rem;
-  margin-bottom: 1rem;
-}
-.footer li {
-  margin-bottom: 0.5rem;
-}
-.footer__logo {
-  margin-bottom: 0.75rem;
-}
-.footer__extLinkWrap {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-  margin-bottom: 0.5rem;
-}
-@container footer (width < 44.375rem) {
-  .footer .column:first-of-type {
-    grid-row: 1/span 2;
-  }
-  .footer .wrapper {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
+  grid-template-columns: 1fr 1fr 1fr;
 }

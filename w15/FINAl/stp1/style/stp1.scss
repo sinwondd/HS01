@@ -8,6 +8,7 @@ a {
   color: white;
   text-decoration: none;
 }
+
 nav {
   background-color: black;
   padding: 1.25rem;
@@ -44,10 +45,13 @@ a:hover {
 
 main {
   width: 100%;
-  height: 100dvh;
+  height: 100vh;
   overflow-x: hidden;
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
+  font-family: system-ui;
+  font-size: 1.25rem;
+  line-height: 1.5;
 }
 
 section {
@@ -68,32 +72,21 @@ section:nth-child(even) {
   );
   color: whitesmoke;
   width: 100vw;
-  height: 100dvh;
+  height: 100vh;
   overflow: hidden;
   margin-inline: auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  padding-left: 50px;
+  padding-right: 50px;
+
+  letter-spacing: 2px;
 
   .button--type-text {
     background-color: unset;
     color: red;
     padding-inline: 0;
   }
-  // .wrapper {
-  //   width: min(60ch, 100% - 4rem);
-  //   min-height: max(50rem, 100dvh);
-  //   margin-inline: auto;
-  //   display: flex;
-  //   flex-direction: column;
-  //   justify-content: center;
-  // }
-  // width: min(60ch, 100% - 4rem);
-  // min-height: max(50rem, 100dvh);
-  // margin-inline: auto;
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: center;
 }
 
 #tired1 {
@@ -117,14 +110,22 @@ section:nth-child(even) {
 }
 
 #tired2 {
-  // .content
-  .animTarget {
-    transform: scale(0);
-    transition: transform 6000ms ease-out;
+  .textanim h2 {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fade-in 1s ease forwards;
   }
-  &.triggered {
-    .animTarget {
-      transform: scale(1);
+
+  .textanim p {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fade-in 1s ease 0.5s forwards;
+  }
+
+  @keyframes fade-in {
+    to {
+      opacity: 1;
+      transform: translateY(0);
     }
   }
 }
@@ -138,11 +139,13 @@ section:nth-child(even) {
   font-size: 80px;
   margin-top: 1.25rem;
 }
+
 p {
   display: flex;
   justify-content: center;
   margin-top: 0.75rem;
   margin-bottom: 1.25rem;
+  padding: 0 1rem; /* 수정된 부분: 패딩을 추가 */
 }
 
 script {
@@ -153,94 +156,18 @@ script {
   text-shadow: 0 0 0.3125rem black;
 }
 
-@media (width < 53.125rem) {
+@media (max-width: 53.125rem) {
   .wrapper {
     display: block;
     text-align: center;
-    p {
-      margin-inline: auto;
-    }
   }
-  .main {
-    &__text {
-      margin-bottom: 2.25rem;
-      &__buttonWrapper {
-        margin-inline: auto;
-        flex-direction: column;
-        align-items: center;
-        gap: 0;
-      }
-    }
+  .main__text {
+    margin-bottom: 2.25rem;
   }
-}
-
-img {
-  display: block;
-}
-
-.container {
-  margin-inline: auto;
-  padding-inline: 2rem;
-}
-@media (width < 37.5rem) {
-  .container {
-    padding-inline: 1rem;
+  .main__text__buttonWrapper {
+    margin-inline: auto;
+    flex-direction: column;
   }
-}
-img {
-  display: block;
-}
-
-.container {
-  margin-inline: auto;
-  padding-inline: 2rem;
-}
-/* 미디어쿼리 창 간격에 따라 글자레이아웃 패딩 조정 */
-@media (width < 37.5rem) {
-  .container {
-    padding-inline: 1rem;
-  }
-}
-.card-section {
-  display: flex;
-  justify-content: center; /* 가로 중앙 정렬 */
-}
-
-.card {
-  width: 300px;
-  padding: 20px;
-  margin: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  text-align: center;
-}
-
-.card-image img {
-  width: 100%;
-  border-radius: 5px;
-}
-
-.card-title {
-  font-size: 24px;
-  margin-bottom: 10px;
-}
-
-.card-description {
-  margin-bottom: 20px;
-}
-
-.card-button {
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 4px;
 }
 
 .footer {
