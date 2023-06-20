@@ -9,18 +9,14 @@ a {
   color: white;
   text-decoration: none;
 }
-
-nav {
+.logo {
   background-color: black;
   padding: 1.25rem;
   display: flex;
   justify-content: space-between;
+  font-family: Georgia, "Times New Roman", Times,
+    serif;
   align-items: center;
-}
-
-.logo img {
-  width: 142px;
-  height: 51.25px;
 }
 
 ul {
@@ -61,21 +57,19 @@ section {
   text-align: center;
 }
 
-section:nth-child(even) {
-  color: aliceblue;
-}
-
 .wrapper {
-  background: linear-gradient(#420602, #000, #e61302);
-  color: whitesmoke;
+  background: linear-gradient(
+    #420602,
+    #000,
+    #e61302
+  );
+  color: seashell;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
   margin-inline: auto;
   display: flex;
   flex-direction: column;
-  padding-left: 50px;
-  padding-right: 50px;
   letter-spacing: 2px;
 }
 .wrapper .button--type-text {
@@ -86,7 +80,8 @@ section:nth-child(even) {
 
 #tired1 .animTarget {
   opacity: 0;
-  transition: transform 750ms ease-out, opacity 1000ms;
+  transition: transform 750ms ease-out,
+    opacity 1000ms;
 }
 #tired1 .animTarget:nth-child(1) {
   transform: translateY(-50px);
@@ -135,7 +130,8 @@ p {
 }
 
 script {
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-family: "Franklin Gothic Medium",
+    "Arial Narrow", Arial, sans-serif;
   font-size: 6.25rem;
   color: chartreuse;
   text-shadow: 0 0 0.3125rem black;
@@ -154,6 +150,59 @@ script {
     flex-direction: column;
   }
 }
+.profile {
+  background-color: #000;
+  padding-block: 4rem;
+  color: white;
+}
+
+.prof {
+  max-width: 1328px;
+  margin-inline: auto;
+  padding-inline: 64px;
+}
+.prof .wrapper {
+  /* background-color: blue; */
+  padding-block: 64px;
+}
+.h2 {
+  margin-bottom: 0.9375rem;
+}
+
+.image-box {
+  width: 100%;
+  border-radius: 5px;
+  padding-block: 4rem;
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(15.4375rem, 1fr)
+  );
+  gap: 0.1875rem;
+}
+
+.prof .image-box:hover .image-box {
+  transform: scale(1.1);
+  transform: 0.8s;
+}
+
+.card-description {
+  margin-bottom: 20px;
+}
+
+.card-button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
 .footer .wrapper {
   grid-template-columns: 1fr 1fr 1fr;
 }

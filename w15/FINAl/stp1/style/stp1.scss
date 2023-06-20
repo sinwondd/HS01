@@ -17,11 +17,6 @@ nav {
   align-items: center;
 }
 
-.logo img {
-  width: 142px;
-  height: 51.25px;
-}
-
 ul {
   list-style-type: none;
   margin: 0;
@@ -60,26 +55,21 @@ section {
   text-align: center;
 }
 
-section:nth-child(even) {
-  color: aliceblue;
-}
-
 .wrapper {
   background: linear-gradient(
     #420602,
     #000,
     #e61302
   );
-  color: whitesmoke;
+  color: seashell;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
   margin-inline: auto;
   display: flex;
   flex-direction: column;
-  padding-left: 50px;
-  padding-right: 50px;
-
+  // padding-left: 6.25rem;
+  // padding-right: 6.25rem;
   letter-spacing: 2px;
 
   .button--type-text {
@@ -168,6 +158,55 @@ script {
     margin-inline: auto;
     flex-direction: column;
   }
+}
+
+.profile {
+  padding-block: 4rem;
+}
+.prof {
+  $padding-inline-value: 64px;
+  max-width: 1200px + 2 * $padding-inline-value;
+  margin-inline: auto;
+  padding-inline: $padding-inline-value;
+  .wrapper {
+    /* background-color: blue; */
+    padding-block: 64px;
+  }
+}
+
+.image-box {
+  width: 100%;
+  border-radius: 5px;
+  padding-block: 4rem;
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(15.4375rem, 1fr)
+  );
+  gap: 0.1875rem;
+}
+.box-text {
+}
+.prof .image-box:hover .image-box {
+  transform: scale(1.1);
+  transform: 0.8s;
+}
+
+.card-description {
+  margin-bottom: 20px;
+}
+
+.card-button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
 }
 
 .footer {
