@@ -11,27 +11,17 @@ a {
 }
 
 nav {
-  background-color: black;
+  background-color: #140000;
   padding: 1.875rem;
   font-size: 1.25rem;
 }
 
 .logo {
   display: flex;
+
   justify-content: space-between;
-  font-family: serif;
-  font-style: italic;
+  font-family: "Hahmlet", serif;
   align-items: center;
-}
-
-a {
-  color: #fff;
-  text-decoration: none;
-  transition: color 0.4s;
-}
-
-a:hover {
-  color: red;
 }
 
 main {
@@ -40,13 +30,50 @@ main {
   overflow-x: hidden;
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
-  font-family: system-ui;
-  font-size: 1.25rem;
-  line-height: 1.5;
+  line-height: 2;
+}
+
+.type {
+  margin-top: 1.875rem;
+  color: #000;
+
+  font-family: "Hahmlet", serif;
+}
+
+article {
+  font-weight: 600;
+  font-size: 1.5625rem;
+  overflow: hidden;
+  border-right: 0.15em solid black;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: 0.15em; /* Adjust as needed */
+  animation: typing 3.5s steps(25, end),
+    blink-caret 0.8s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 70.25rem;
+  }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: black;
+  }
 }
 
 section {
-  scroll-snap-align: center;
+  scroll-snap-align: start;
   overflow: hidden;
   text-align: center;
 }
@@ -66,28 +93,39 @@ p {
   }
 }
 .wrapper {
-  background: linear-gradient(#420602, #000, #e61302);
+  background: linear-gradient(
+    #420602,
+    #140000,
+    #e61302
+  );
   color: seashell;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  font-family: serif;
   display: flex;
+  justify-content: center;
   flex-direction: column;
-  padding-inline: 3.125rem;
-  letter-spacing: 2px;
-  padding-top: 3.75rem;
+  /* padding-inline: 3.125rem; */
+  letter-spacing: 0.0625rem;
 }
 
-.button--type-text {
-  background-color: unset;
-  color: red;
-  padding-inline: 0;
+.gif {
+  margin: 0;
+  max-width: 56.25rem;
+  animation: infinite-rotation 1s linear infinite;
 }
 
 #tired1 .animTarget {
+  background: linear-gradient(
+    90deg,
+    #000,
+    #140000,
+    #000
+  );
+  margin: 0;
   opacity: 0;
-  transition: transform 750ms ease-out, opacity 1000ms;
+  transition: transform 750ms ease-out,
+    opacity 1000ms;
 }
 #tired1 .animTarget:nth-child(1) {
   transform: translateY(-50px);
@@ -134,22 +172,26 @@ p {
   transform: translateX(0);
 }
 
-.h1 {
+h3 {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Noto Sans KR", sans-serif;
-  font-weight: 700;
-  font-size: 80px;
-  margin-top: 1.25rem;
+  font-family: Cambria, Cochin, Georgia, Times,
+    "Times New Roman", serif;
+  font-weight: 400;
+  font-size: 3.75rem;
+  margin-top: 1.875rem;
 }
 
 p {
   display: flex;
-  justify-content: center;
-  margin-top: 0.75rem;
-  margin-bottom: 1.25rem;
-  padding: 0 1rem; /* 수정된 부분: 패딩을 추가 */
+  justify-content: space-between;
+  font-family: "Diphylleia", serif;
+  margin-top: 1.25rem;
+  max-width: 56.25rem; /* 화면의 최대 너비를 설정 */
+  margin-left: auto; /* 좌우 중앙 정렬을 위해 왼쪽 여백을 자동으로 설정 */
+  margin-right: auto;
+  font-size: 1.125rem\;;
 }
 
 @media (max-width: 53.125rem) {
@@ -173,27 +215,32 @@ p {
 }
 
 .ima-title {
-  margin-bottom: 1.25rem;
+  margin-bottom: 64px;
   display: flex;
   justify-content: center;
-  padding: 1.875rem;
-  font-size: 1.875rem;
-  /* align-items: center;
-  display: ; */
+  font-size: 3.125rem;
+  font-family: Cambria, Cochin, Georgia, Times,
+    "Times New Roman", serif;
 }
 
 .card-title {
   margin-bottom: 1.5rem;
   align-items: center;
-  color: brown;
+  color: white;
+  font-family: "Hahmlet", serif;
 }
 
 .box-text {
   width: 75%;
-  padding-block: 3.125rem;
+  padding-block: 2.5rem;
   display: grid;
   margin-left: 12vw;
-  grid-template-columns: repeat(auto-fit, minmax(15.4375rem, 1fr));
+  margin-bottom: 20px;
+  font-family: "Diphylleia", serif;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(15.4375rem, 1fr)
+  );
   gap: 0.1875rem;
 }
 
@@ -204,13 +251,7 @@ p {
 
 .card__img:hover {
   transform: scale(1.1);
-  transform: 1s;
-}
-
-.card-description {
-  margin-bottom: 20px;
-  color: mistyrose;
-  font-family: "Diphylleia", serif;
+  transform: 5s;
 }
 
 @keyframes button-animation {
@@ -230,7 +271,7 @@ p {
   width: fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  background-color: red;
+  background-color: maroon;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -241,7 +282,7 @@ p {
   cursor: pointer;
   border-radius: 4px;
   animation-name: button-animation;
-  animation-duration: 1s;
+  animation-duration: 2s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: 15;
 }
